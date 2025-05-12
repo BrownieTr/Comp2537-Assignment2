@@ -1,0 +1,19 @@
+<%- include("templates/header") %>
+
+<div class="container my-5 text-center">
+  <%- include("templates/hello", { user: user }) %>
+
+  <div class="my-4">
+    <% for (let i = 0; i < 3; i++) { %>
+        <img src="img/image<%=i%>.gif" class="img-fluid rounded shadow" style="max-width: 250px;" alt="Random Image">
+    <% } %>
+</div>
+
+  <div class="d-grid gap-2 col-4 mx-auto">
+    <button class="btn btn-outline-danger btn-lg" onclick="window.location.href='/logout'">
+      Logout
+    </button>
+  </div>
+</div>
+
+<%- include("templates/footer") %>

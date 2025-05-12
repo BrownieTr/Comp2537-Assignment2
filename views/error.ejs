@@ -1,0 +1,30 @@
+<%- include("templates/header") %>
+
+<div class="container my-5">
+  <% if (typeof validateResult !== 'undefined') { %>
+    <div class="alert alert-danger" role="alert">
+      Invalid name/email/password combination.
+    </div>
+    <%- include("templates/tryagain", { type: type }) %>
+
+  <% } else if (typeof user !== 'undefined') { %>
+    <% if (type === "signup") { %>
+      <div class="alert alert-info" role="alert">
+        Email is already signed up.
+      </div>
+    <% } else { %>
+      <div class="alert alert-info" role="alert">
+        User email is not registered yet.
+      </div>
+    <% } %>
+    <%- include("templates/tryagain", { type: type }) %>
+
+  <% } else if (password) { %>
+    <div class="alert alert-danger" role="alert">
+      Incorrect password combination.
+    </div>
+    <%- include("templates/tryagain", { type: "login" }) %>
+  <% } %>
+</div>
+
+<%- include("templates/footer") %>

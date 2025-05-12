@@ -1,0 +1,12 @@
+<div class="card mb-2 p-2">
+  <div class="d-flex justify-content-between align-items-center">
+    <div class="me-3">
+      <h5><%= user.username %></h5>
+      <p class="mb-0"><strong>Role:</strong> <%= user.user_type %></p>
+    </div>
+    <div>
+      <a href="/promote?type=admin&email=<%= user.email %>" class="btn btn-outline-success btn-sm me-2">Promote to Admin</a>
+      <a href="/promote?type=user&email=<%= user.email %>" class="btn btn-outline-warning btn-sm">Promote to User</a>
+    </div>
+  </div>
+</div>
